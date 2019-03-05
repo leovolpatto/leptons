@@ -16,7 +16,7 @@ final class ActionsController extends Controller
         $actions = new QueueActions();
         
         $c = new \App\Command();
-        $c->command = 'test';
+        $c->action = 'test';
         $c->pending = true;
         $c->date = new \DateTime();
         $c->save();
