@@ -15,6 +15,12 @@ final class ActionsController extends Controller
     {        
         $actions = new QueueActions();
         
+        $c = new \App\Command();
+        $c->command = 'test';
+        $c->pending = true;
+        $c->date = new \DateTime();
+        $c->save();
+        
         $step = 50;
         $currentStep = 0;
         do{
