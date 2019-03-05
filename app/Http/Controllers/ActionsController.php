@@ -21,6 +21,9 @@ final class ActionsController extends Controller
         $c->date = new \DateTime();
         $c->save();
         
+        $actions->actions = \App\Command::where('pending', true)->orderBy('id')->first();
+        
+        /*
         $step = 50;
         $currentStep = 0;
         do{
@@ -35,7 +38,7 @@ final class ActionsController extends Controller
             $actions->actions = \App\Command::where('pending', true)->orderBy('id')->first();
             $currentStep ++;
             
-        }while($actions->actions == null);
+        }while($actions->actions == null);*/
         
         return Response::json($actions, 200);
     }
