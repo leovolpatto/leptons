@@ -1,0 +1,6 @@
+[05-Mar-2019 19:11:34 America/Sao_Paulo] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/php_curl.so' - /usr/lib/php/20160303/php_curl.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-Mar-2019 19:11:34 America/Sao_Paulo] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Mar-2019 19:13:34 America/Sao_Paulo] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/php_curl.so' - /usr/lib/php/20160303/php_curl.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-Mar-2019 19:13:34 America/Sao_Paulo] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Mar-2019 19:13:34 America/Sao_Paulo] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/php_curl.so' - /usr/lib/php/20160303/php_curl.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-Mar-2019 19:13:34 America/Sao_Paulo] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
