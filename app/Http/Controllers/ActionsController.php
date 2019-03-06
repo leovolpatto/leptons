@@ -15,15 +15,6 @@ final class ActionsController extends Controller
     {        
         $actions = new QueueActions();
         
-        $c = new \App\Command();
-        $c->action = 'test';
-        $c->pending = true;
-        $c->date = new \DateTime();
-        $c->save();
-        
-        $actions->actions = \App\Command::where('pending', true)->orderBy('id')->first();
-        
-        /*
         $step = 50;
         $currentStep = 0;
         do{
@@ -38,7 +29,7 @@ final class ActionsController extends Controller
             $actions->actions = \App\Command::where('pending', true)->orderBy('id')->first();
             $currentStep ++;
             
-        }while($actions->actions == null);*/
+        }while($actions->actions == null);
         
         return Response::json($actions, 200);
     }
@@ -47,6 +38,7 @@ final class ActionsController extends Controller
         $a = new  \App\Command();
         $input = $request->input();
         $a->action = $input['action'];
+        $a->date = new \DateTime();
         $a->pending = true;
         $a->save();
         return Response::json($a, 200);
