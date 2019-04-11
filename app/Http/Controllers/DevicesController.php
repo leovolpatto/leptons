@@ -41,8 +41,8 @@ final class DevicesController extends Controller{
         $device->id = $request->input('id');
         $device->account_id = $request->input('account_id') ?? null;
         $device->active = $request->input('active');
-        $device->name = $request->input('name');
-        $device->description = $request->input('description');
+        $device->name = $request->input('name') ?? $device->id;
+        $device->description = $request->input('description') ?? "Novo Dispositivo";
         
         if($device->save()){
             return $this->sendCreatedResponse($device);

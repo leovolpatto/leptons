@@ -16,7 +16,7 @@ final class Command extends Model
     public $fillable = [
     ];
     
-     protected $visible = ['id', 'pin', 'type', 'action', 'name'];
+     protected $visible = ['id', 'pin', 'type', 'action', 'name', 'pending'];
 
     /**
      * @var array

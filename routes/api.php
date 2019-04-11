@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 
 Route::get('devices/{deviceId}/commands', 'DevicesCommandsController@getDeviceCommands');
+Route::get('devices/{deviceId}/commands/{id}', 'DevicesCommandsController@getDeviceCommand');
 Route::post('devices/{deviceId}/commands', 'DevicesCommandsController@createCommand');
 Route::put('devices/{deviceId}/commands/{id}', 'DevicesCommandsController@confirmCommandExecution');
 

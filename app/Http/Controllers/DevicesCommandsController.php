@@ -19,6 +19,7 @@ final class DevicesCommandsController extends Controller
         $this->actionTypes[] = Command::COMMAND_ACTION_ACTIVATION;
         $this->actionTypes[] = Command::COMMAND_ACTION_DEACTIVATION;
     }
+    
     /**
      * @return \Illuminate\Http\Response
      */
@@ -26,7 +27,7 @@ final class DevicesCommandsController extends Controller
     {        
         $actions = new QueuedCommands();
         
-        $step = 2;
+        $step = 60;
         $currentStep = 0;
         do{
             if($currentStep == $step){
@@ -47,6 +48,16 @@ final class DevicesCommandsController extends Controller
         }
         
         return $this->sendOkResponse($actions);
+    }
+    
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function getDeviceCommand(string $deviceId, int $id)
+    {       
+        $command = Command::where([['id', $id], ['device_id', $deviceId]])->first();
+        
+        return $this->sendOkResponse($command);
     }
     
     public function createCommand(string $deviceId, Request $request){
