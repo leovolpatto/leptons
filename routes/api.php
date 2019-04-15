@@ -11,6 +11,7 @@ Route::get('devices/{id}', 'DevicesController@getDevice');
 Route::get('devices', 'DevicesController@getDevices');
 Route::post('devices', 'DevicesController@postDevice');
 Route::delete('devices/{id}', 'DevicesController@deleteDevice');
+Route::put('devices/{id}', 'DevicesController@putDevice');
 
 Route::get('devices/{deviceId}/ports-configs', 'DevicePortsConfigController@getDeviceConfig');
 Route::post('devices/{deviceId}/ports-configs', 'DevicePortsConfigController@postDevicePortConfig');

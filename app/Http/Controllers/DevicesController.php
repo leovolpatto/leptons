@@ -41,11 +41,39 @@ final class DevicesController extends Controller{
         $device->id = $request->input('id');
         $device->account_id = $request->input('account_id') ?? null;
         $device->active = $request->input('active');
+        
+        
+        $device->active = true;
+        
+        
         $device->name = $request->input('name') ?? $device->id;
         $device->description = $request->input('description') ?? "Novo Dispositivo";
         
         if($device->save()){
             return $this->sendCreatedResponse($device);
+        }
+        
+        return $this->sendBadRequestResponse($device);
+    }
+    
+    public function putDevice(string $id, Request $request){
+        $device = \App\Models\Device::where('id', $id)->first();
+        if($device == null){
+            return $this->sendBadRequestResponse("Device $id not exists");
+        }
+        
+        $device->active = $request->input('active') ?? true;
+        
+        if($request->input('name') == null){
+            $device->name = $request->input('name');
+        }
+        
+        if($request->input('description') != null){
+            $device->description = $request->input('description');
+        }
+        
+        if($device->save()){
+            return $this->sendOkResponse($device);
         }
         
         return $this->sendBadRequestResponse($device);
